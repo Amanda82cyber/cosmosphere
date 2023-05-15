@@ -1,4 +1,8 @@
-module com.mycompany.cosmosphere {
+module project.cosmosphere {
     requires javafx.controls;
-    exports com.mycompany.cosmosphere;
+    requires javafx.fxml;
+    requires java.base;
+
+    opens project.cosmosphere to javafx.fxml;
+    exports project.cosmosphere;
 }

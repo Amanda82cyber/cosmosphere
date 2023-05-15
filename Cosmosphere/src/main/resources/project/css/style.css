@@ -1,0 +1,16 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+@font-face {
+    font-family: Revelstoke;
+    src: url("../font/Revelstoke.ttf");
+}
+
+.mainFxmlClass {
+    -fx-background-image: url("../img/background.png");
+    -fx-background-size: cover; 
+    -fx-font-family: 'Revelstoke';
+    -fx-font-size: 20px;
+    -fx-text-fill: white;
+}
