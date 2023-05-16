@@ -15,7 +15,7 @@ public class App extends Application {
         
         Scene cena = new Scene(raiz);
         
-        stage.setTitle("Cosmosphere");
+        stage.setTitle("Cosmosphere - Tela Inicial");
         stage.setScene(cena);
         stage.show();
     }

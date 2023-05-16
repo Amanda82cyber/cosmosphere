@@ -10,6 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
+import javafx.stage.Popup;
 import javafx.stage.Stage;
 
 public class TelaInicialController implements Initializable {
@@ -24,7 +26,7 @@ public class TelaInicialController implements Initializable {
         
         Stage stage = (Stage) telaInicial.getScene().getWindow();
         stage.setScene(new Scene(raiz));
-        stage.setTitle("Simulação");
+        stage.setTitle("Cosmosphere - Simulação");
         stage.show();
     }
     
@@ -36,7 +38,7 @@ public class TelaInicialController implements Initializable {
         
         Stage stage = (Stage) telaInicial.getScene().getWindow();
         stage.setScene(new Scene(raiz));
-        stage.setTitle("Créditos");
+        stage.setTitle("Cosmosphere - Créditos");
         stage.show();
     }
     
@@ -46,9 +48,16 @@ public class TelaInicialController implements Initializable {
         FXMLLoader fxml = new FXMLLoader(url);
         Parent raiz = fxml.load();
         
-        Stage stage = (Stage) telaInicial.getScene().getWindow();
-        stage.setScene(new Scene(raiz));
-        stage.setTitle("Sair");
+        Scene cena = new Scene(raiz);
+        
+        Stage stage = new Stage();
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.setTitle("Pop-up Sair");
+        stage.setScene(cena);
+        
+        stage.sizeToScene();
+        stage.setResizable(false);
+        
         stage.show();
     }
     
