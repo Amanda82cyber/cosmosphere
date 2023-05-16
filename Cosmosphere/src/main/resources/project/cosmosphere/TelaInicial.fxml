@@ -5,13 +5,15 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="telaInicial" fx:id="telaInicial" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controller.TelaInicialController">
+<AnchorPane id="telaInicial" fx:id="telaInicial" prefHeight="400.0" prefWidth="600.0" styleClass="archor-pane" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controller.TelaInicialController">
    <children>
-      <ImageView fx:id="logo" fitHeight="175.0" fitWidth="305.0" layoutX="6.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="logo" fitHeight="175.0" fitWidth="305.0" layoutX="-3.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/logo.png" />
          </image>
       </ImageView>
-      <Hyperlink layoutX="429.0" layoutY="155.0" text="Iniciar Simulação" />
+      <Hyperlink fx:id="iniciarSimulacao" layoutX="361.0" layoutY="141.0" onAction="#abrirTelaSimulacao" styleClass="hyper-link" text="INICIAR SIMULAÇÃO" />
+      <Hyperlink layoutX="410.0" layoutY="182.0" onAction="#abrirTelaCreditos" styleClass="hyper-link" text="CRÉDITOS" />
+      <Hyperlink layoutX="438.0" layoutY="224.0" onAction="#popUpSair" styleClass="hyper-link" text="SAIR" />
    </children>
 </AnchorPane>

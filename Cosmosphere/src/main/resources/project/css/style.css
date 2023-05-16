@@ -1,16 +1,44 @@
-/*
- * Empty Stylesheet file.
- */
-
 @font-face {
-    font-family: Revelstoke;
+    font-family: "Revelstoke";
     src: url("../font/Revelstoke.ttf");
 }
 
-.mainFxmlClass {
+.archor-pane {
     -fx-background-image: url("../img/background.png");
     -fx-background-size: cover; 
-    -fx-font-family: 'Revelstoke';
+    -fx-font-family: "Revelstoke";
+    -fx-font-size: 12px;
+    -fx-text-fill: #6c8688;
+}
+
+.archor-pane .hyper-link {
+    -fx-font-family: "Revelstoke";
+    -fx-text-fill: #6c8688;
+    -fx-underline: false;
     -fx-font-size: 20px;
-    -fx-text-fill: white;
+}
+
+.archor-pane .hyper-link:hover {
+    -fx-text-fill: #c6f4f7;
+}
+
+.archor-pane .title {
+    -fx-font-family: "Revelstoke";
+    -fx-font-size: 26px;
+    -fx-text-fill: #6c8688;
+}
+
+.archor-pane .button {
+    -fx-background-color: transparent;
+    -fx-border-width: 2px;
+    -fx-border-color: #6c8688;
+    -fx-text-fill: #6c8688;
+    -fx-font-family: "Revelstoke";
+    -fx-font-weight: bold;
+    -fx-padding: 8px 16px;
+}
+
+.archor-pane .button:hover {
+    -fx-background-color: #6c8688;
+    -fx-text-fill: #000;
 }

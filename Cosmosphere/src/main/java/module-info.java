@@ -4,5 +4,6 @@ module project.cosmosphere {
     requires java.base;
 
     opens project.cosmosphere to javafx.fxml;
+    opens project.controller to javafx.fxml;
     exports project.cosmosphere;
 }

@@ -1,20 +1,15 @@
 package project.cosmosphere;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
-
-import java.io.IOException;
 import java.net.URL;
+import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-/**
- * JavaFX App
- */
 public class App extends Application {
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws Exception {
         URL url = getClass().getResource("TelaInicial.fxml");
         Parent raiz = FXMLLoader.load(url);
         
@@ -28,5 +23,4 @@ public class App extends Application {
     public static void main(String[] args) {
         launch();
     }
-
 }
