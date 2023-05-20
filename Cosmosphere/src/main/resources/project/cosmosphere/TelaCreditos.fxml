@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" fx:id="telaCreditos" prefHeight="400.0" prefWidth="600.0" styleClass="archor-pane" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controller.TelaCreditosController">
-   <children>
-      <Hyperlink layoutX="120.0" layoutY="146.0" onAction="#abrirLinkedin" styleClass="hyper-link" text="ADILSON TAVARES DA ROCHA JUNIOR" />
-      <Hyperlink layoutX="206.0" layoutY="181.0" onAction="#abrirLinkedin" styleClass="hyper-link" text="AMANDA MOREIRA" />
-      <Hyperlink layoutX="163.0" layoutY="219.0" onAction="#abrirLinkedin" styleClass="hyper-link" text="JOÃO VITOR RIBEIRO MACIEL" />
-      <Hyperlink layoutX="149.0" layoutY="257.0" onAction="#abrirLinkedin" styleClass="hyper-link" text="LUIS FERNANDO ZUCATO FILHO" />
-      <Text fill="#6c8688" layoutX="238.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="CRÉDITOS" />
-      <Button layoutX="259.0" layoutY="327.0" mnemonicParsing="false" onAction="#voltarTelaInicial" styleClass="button" text="VOLTAR" />
-   </children>
-</AnchorPane>
+<BorderPane fx:id="telaCreditos" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" styleClass="border-pane" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controller.TelaCreditosController">
+   <top>
+      <Text fill="#6c8688" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="CRÉDITOS" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets top="40.0" />
+         </BorderPane.margin>
+      </Text>
+   </top>
+   <bottom>
+      <Button mnemonicParsing="false" onAction="#voltarTelaInicial" text="VOLTAR" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="40.0" />
+         </BorderPane.margin>
+      </Button>
+   </bottom>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Hyperlink onAction="#abrirLinkedin" styleClass="hyper-link" text="ADILSON TAVARES DA ROCHA JUNIOR" />
+            <Hyperlink layoutX="114.0" layoutY="126.0" onAction="#abrirLinkedin" styleClass="hyper-link" text="AMANDA MOREIRA" />
+            <Hyperlink layoutX="210.0" layoutY="142.0" onAction="#abrirLinkedin" styleClass="hyper-link" text="JOÃO VITOR RIBEIRO MACIEL" />
+            <Hyperlink layoutX="160.0" layoutY="159.0" onAction="#abrirLinkedin" styleClass="hyper-link" text="LUIS FERNANDO ZUCATO FILHO" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

@@ -9,14 +9,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
 
 public class TelaInicialController implements Initializable {
     @FXML
-    private AnchorPane telaInicial;
+    private BorderPane telaInicial;
     
     @FXML
     public void abrirTelaSimulacao() throws IOException {

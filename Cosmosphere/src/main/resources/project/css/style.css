@@ -3,42 +3,51 @@
     src: url("../font/Revelstoke.ttf");
 }
 
-.archor-pane {
+.border-pane {
     -fx-background-image: url("../img/background.png");
     -fx-background-size: cover; 
     -fx-font-family: "Revelstoke";
-    -fx-font-size: 12px;
+    -fx-font-size: 28px;
     -fx-text-fill: #6c8688;
 }
 
-.archor-pane .hyper-link {
+.border-pane .hyper-link {
     -fx-font-family: "Revelstoke";
     -fx-text-fill: #6c8688;
     -fx-underline: false;
-    -fx-font-size: 20px;
 }
 
-.archor-pane .hyper-link:hover {
+.border-pane .hyper-link.larger {
+    -fx-font-size: 35px;
+}
+
+.border-pane .hyper-link:hover {
     -fx-text-fill: #c6f4f7;
 }
 
-.archor-pane .title {
+.border-pane .title {
     -fx-font-family: "Revelstoke";
-    -fx-font-size: 26px;
+    -fx-font-size: 40px;
     -fx-text-fill: #6c8688;
 }
 
-.archor-pane .button {
+.border-pane .button {
     -fx-background-color: transparent;
     -fx-border-width: 2px;
     -fx-border-color: #6c8688;
     -fx-text-fill: #6c8688;
     -fx-font-family: "Revelstoke";
     -fx-font-weight: bold;
-    -fx-padding: 8px 16px;
+    -fx-padding: 5px 15px;
+    -fx-font-size: 20px;
 }
 
-.archor-pane .button:hover {
+.border-pane .button:hover, .border-pane .button.active {
     -fx-background-color: #6c8688;
     -fx-text-fill: #000;
+}
+
+.border-pane .button.active:hover {
+    -fx-background-color: transparent;
+    -fx-text-fill: #6c8688;
 }
