@@ -51,3 +51,7 @@
     -fx-background-color: transparent;
     -fx-text-fill: #6c8688;
 }
+
+.sol {
+    -fx-background-radius: 100px;
+}
