@@ -52,6 +52,16 @@
     -fx-text-fill: #6c8688;
 }
 
-.sol {
-    -fx-background-radius: 100px;
+.border-pane .escala-tela-inicial {
+    -fx-font-size: 20px;
+    -fx-text-fill: #6c8688;
 }
+
+.border-pane .icon-button {
+    -fx-cursor: hand;
+}
+
+.border-pane .icon-button:hover {
+    -fx-effect: dropshadow(three-pass-box, #6c8587ad, 10, 0.2, -2px, -2px);
+}
+
