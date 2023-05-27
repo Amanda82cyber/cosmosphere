@@ -44,42 +44,42 @@
                 <Image url="@../img/sol.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="6.9" fitWidth="6.9" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+        <ImageView fx:id="Mercurio" fitHeight="6.9" fitWidth="6.9" onMouseClicked="#PopUpAbrirMercurio" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
             <image>
                 <Image url="@../img/mercurio.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="9.75" fitWidth="9.75" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+        <ImageView fx:id="Venus" fitHeight="9.75" fitWidth="9.75" onMouseClicked="#PopUpAbrirVenus" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
             <image>
                 <Image url="@../img/venus.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="10.0" fitWidth="10.906" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+        <ImageView fx:id="Terra" fitHeight="10.0" fitWidth="10.906" onMouseClicked="#PopUpAbrirTerra" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
             <image>
                 <Image url="@../img/terra.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="7.65" fitWidth="7.65" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+        <ImageView fx:id="Marte" fitHeight="7.65" fitWidth="7.65" onMouseClicked="#PopUpAbrirMarte" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
             <image>
                 <Image url="@../img/marte.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+        <ImageView fx:id="Jupiter" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#PopUpAbrirJupiter" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
             <image>
                 <Image url="@../img/jupiter.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+        <ImageView fx:id="Saturno" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#PopUpAbrirSaturno" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
             <image>
                 <Image url="@../img/saturno.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+        <ImageView fx:id="Urano" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#PopUpAbrirUrano" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
             <image>
                 <Image url="@../img/urano.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="11" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+        <ImageView fx:id="Netuno" fitHeight="24.0" fitWidth="24.0" onMouseClicked="#PopUpAbrirNetuno" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="11" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
             <image>
                 <Image url="@../img/netuno.png" />
             </image>

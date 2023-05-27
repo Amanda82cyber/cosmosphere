@@ -60,6 +60,7 @@ public class TelaInicialController implements Initializable {
         stage.show();
     }
     
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
