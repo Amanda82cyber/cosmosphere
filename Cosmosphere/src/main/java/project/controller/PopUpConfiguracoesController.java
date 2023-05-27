@@ -37,7 +37,7 @@ public class PopUpConfiguracoesController implements Initializable {
         
         Stage stage = (Stage) PopUpConfiguracoes.getScene().getWindow();
         stage.setScene(new Scene(raiz));
-        stage.setTitle("Cosmosphere - Créditos");
+        stage.setTitle("Cosmosphere - Ações");
         stage.show();
     }
     
