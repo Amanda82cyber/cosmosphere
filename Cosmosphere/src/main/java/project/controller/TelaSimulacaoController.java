@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 //import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 //import javafx.scene.paint.PhongMaterial;
@@ -78,8 +79,22 @@ public class TelaSimulacaoController implements Initializable {
     }
     
     @FXML
-    public void popUpConfiguracao() throws IOException {
+    public void popUpAbrirConfiguracao() throws IOException {
+        URL url = App.class.getResource("PopUpConfiguracoes.fxml");
+        FXMLLoader fxml = new FXMLLoader(url);
+        Parent raiz = fxml.load();
         
+        Scene cena = new Scene(raiz);
+        
+        Stage stage = new Stage();
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.setTitle("Configurações");
+        stage.setScene(cena);
+        
+        stage.sizeToScene();
+        stage.setResizable(false);
+        
+        stage.show();
     }
     
     @FXML

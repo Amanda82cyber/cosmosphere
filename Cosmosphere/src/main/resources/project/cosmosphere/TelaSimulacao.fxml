@@ -92,7 +92,7 @@
             <Insets top="12.0" />
          </GridPane.margin>
       </ImageView>
-      <ImageView fitHeight="38.0" fitWidth="31.0" onMouseClicked="#popUpConfiguracao" onTouchPressed="#popUpConfiguracao" pickOnBounds="true" preserveRatio="true" styleClass="icon-button" GridPane.columnIndex="12" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+      <ImageView fitHeight="38.0" fitWidth="31.0" onMouseClicked="#popUpAbrirConfiguracao" onTouchPressed="#popUpAbrirConfiguracao" pickOnBounds="true" preserveRatio="true" styleClass="icon-button" GridPane.columnIndex="12" GridPane.halignment="CENTER" GridPane.valignment="TOP">
          <image>
             <Image url="@../img/icon-engrenagem.png" />
          </image>
