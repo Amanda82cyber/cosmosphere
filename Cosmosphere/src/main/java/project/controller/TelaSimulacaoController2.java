@@ -14,6 +14,8 @@ import javafx.scene.shape.Sphere;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import project.cosmosphere.App;
+import project.cosmosphere.Planetas;
+import project.cosmosphere.Terra;
 
 public class TelaSimulacaoController2 implements Initializable { 
     @FXML
@@ -58,12 +60,35 @@ public class TelaSimulacaoController2 implements Initializable {
     
     @FXML
     public void popUpPlaneta(ActionEvent event) throws IOException {
-//      System.out.println(event.getSource());
         URL url = App.class.getResource("PopUpPlaneta.fxml");
         FXMLLoader fxml = new FXMLLoader(url);
         Parent raiz = fxml.load();
         
+        Sphere esfera = (Sphere) event.getSource();
         PopUpPlanetaController planetaController = fxml.getController();
+        
+        Planetas objeto = new Planetas();
+        
+        if(esfera.getId().equals("terra")) {
+          objeto = (Terra) objeto;
+        } 
+//        else if (esfera.getId().equals("mercurio")) {
+//          Mercurio objeto = new Mercurio();
+//        } else if (esfera.getId().equals("venus")) {
+//          Venus objeto = new Venus();
+//        } else if (esfera.getId().equals("marte")) {
+//          Marte objeto = new Marte();
+//        } else if (esfera.getId().equals("jupiter")) {
+//          Jupiter objeto = new Jupiter();
+//        } else if (esfera.getId().equals("saturno")) {
+//          Saturno objeto = new Saturno();
+//        } else if (esfera.getId().equals("urano")) {
+//          Urano objeto = new Urano();
+//        } else if (esfera.getId().equals("netuno")) {
+//          Netuno objeto = new Netuno();
+//        }
+
+        planetaController.preencherTela(objeto);
         
         Scene cena = new Scene(raiz);
         
