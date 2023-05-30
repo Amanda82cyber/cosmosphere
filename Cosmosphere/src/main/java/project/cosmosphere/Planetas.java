@@ -7,7 +7,7 @@ public class Planetas {
     private double distanciaSol; // km
     private String sateliteNatural;
     private int periodoRotacao; // segundos
-    private int periodoTranslacao; // segundos
+    private long periodoTranslacao; // segundos
     private String temperatura;
     private String populacao;
     private String idade;
@@ -40,7 +40,7 @@ public class Planetas {
         return periodoRotacao;
     }
     
-    public int getPeriodoTranslacao() {
+    public long getPeriodoTranslacao() {
         return periodoTranslacao;
     }
     
@@ -82,16 +82,16 @@ public class Planetas {
     }
     
     // ACTIONS    
-    public static String calcularPeriodo(int valor) {
-        int horas = valor/3600;
-        int min = (valor%3600)/60;
-        int seg = (valor%3600)%60;
+    public static String calcularPeriodo(long valor) {
+        long horas = valor/3600;
+        long min = (valor%3600)/60;
+        long seg = (valor%3600)%60;
         
-        StringBuilder periodo = new StringBuilder(Integer.toString(horas));
+        StringBuilder periodo = new StringBuilder(Long.toString(horas));
         periodo.append("H ");
-        periodo.append(Integer.toString(min));
+        periodo.append(Long.toString(min));
         periodo.append("MIN ");
-        periodo.append(Integer.toString(seg));
+        periodo.append(Long.toString(seg));
         periodo.append("S");
         
         return periodo.toString();

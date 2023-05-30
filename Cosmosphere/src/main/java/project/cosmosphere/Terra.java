@@ -8,7 +8,7 @@ public class Terra extends Planetas {
     private double distanciaSol = 149600000; // km
     private String sateliteNatural = "Lua";
     private int periodoRotacao = 86164; // segundos
-    private int periodoTranslacao = 31556880; // segundos
+    private long periodoTranslacao = 31556880; // segundos
     private String temperatura = "14ºC";
     private String populacao = "8.028.091.456";
     private String idade = "4,5 bilhões de anos";
