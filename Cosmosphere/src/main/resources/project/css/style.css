@@ -65,3 +65,8 @@
     -fx-effect: dropshadow(three-pass-box, #6c8587ad, 10, 0.2, -2px, -2px);
 }
 
+.border-pane .border-right {
+    -fx-border-style: none solid none none;
+    -fx-border-width: 0 5px 0 0;
+    -fx-border-color: #6c8688;
+}
