@@ -1,68 +1,30 @@
 package project.cosmosphere;
 
 public class Planetas {
-    private double diametro;
-    private double area;
-    private double massa;
-    private double distanciaSol;
+    private String diametro;
+    private String area;
+    private String massa;
+    private double distanciaSol; // km
     private String sateliteNatural;
     private int periodoRotacao; // segundos
     private int periodoTranslacao; // segundos
-    private double temperatura;
-    private double populacao;
-    private double idade;
-    
-    // SETs
-    public void setDiametro(double diametro) {
-        this.diametro = diametro;
-    }
-    
-    public void setArea(double area) {
-        this.area = area;
-    }
-    
-    public void setMassa(double massa) {
-        this.massa = massa;
-    }
-    
-    public void setDistanciaSol(double distanciaSol) {
-        this.distanciaSol = distanciaSol;
-    }
-    
-    public void setSateliteNatural(String sateliteNatural) {
-        this.sateliteNatural = sateliteNatural;
-    }
-    
-    public void setPeriodoRotacao(int periodoRotacao) {
-        this.periodoRotacao = periodoRotacao;
-    }
-    
-    public void setPeriodoTranslacao(int periodoTranslacao) {
-        this.periodoTranslacao = periodoTranslacao;
-    }
-    
-    public void setTemperatura(double temperatura) {
-        this.temperatura = temperatura;
-    }
-    
-    public void setPopulacao(double populacao) {
-        this.populacao = populacao;
-    }
-    
-    public void setIdade(double idade) {
-        this.idade = idade;
-    }
+    private String temperatura;
+    private String populacao;
+    private String idade;
+    private double perimetro; // km
+    private String [] caracteristicas = new String[6];
+    private String urlImagem; 
     
     // GETs
-    public double getDiametro() {
+    public String getDiametro() {
         return diametro;
     }
     
-    public double getArea() {
+    public String getArea() {
        return area;
     }
     
-    public double getMassa() {
+    public String getMassa() {
         return massa;
     }
     
@@ -74,45 +36,41 @@ public class Planetas {
         return sateliteNatural;
     }
     
-    public double getPeriodoRotacao() {
+    public int getPeriodoRotacao() {
         return periodoRotacao;
     }
     
-    public double getPeriodoTranslacao() {
+    public int getPeriodoTranslacao() {
         return periodoTranslacao;
     }
     
-    public double getTemperatura() {
+    public String getTemperatura() {
         return temperatura;
     }
     
-    public double getPopulacao() {
+    public String getPopulacao() {
         return populacao;
     }
     
-    public double getIdade() {
+    public String getIdade() {
         return idade;
     }
     
-    // GETs com Formatação
-    public String getDiametroFormatado() {
-        return escreverComPotencia(diametro, " KM");
+    public double getPerimetro() {
+        return perimetro;
     }
     
-    public String getAreaFormatado() {
-       return escreverComPotencia(area, " KM²");
+    public String [] getCaracteristicas() {
+        return caracteristicas;
     }
     
-    public String getMassaFormatado() {
-        return escreverComPotencia(massa, " KG");
+    public String getUrlImagem() {
+        return urlImagem;
     }
     
+    // GETs com Formatação    
     public String getDistanciaSolFormatado() {
-        return escreverComPotencia(distanciaSol, " KM");
-    }
-    
-    public String getSateliteNaturalFormatado() {
-        return sateliteNatural;
+        return Double.toString(distanciaSol) + " KM";
     }
     
     public String getPeriodoRotacaoFormatado() {
@@ -123,34 +81,7 @@ public class Planetas {
         return calcularPeriodo(periodoTranslacao);
     }
     
-    public String getTemperaturaFormatado() {
-        return escreverComPotencia(temperatura, " °C");
-    }
-    
-    public String getPopulacaoFormatado() {
-        return escreverComPotencia(populacao, "");
-    }
-    
-    public String getIdadeFormatado() {
-        return escreverComPotencia(idade, " ANOS");
-    }
-    
-    // ACTIONS
-    public static String escreverComPotencia(double valor, String unidade) {
-        int inteira = (int) valor;
-        int decimal = (int)Math.round((valor - inteira) * 10);
-        StringBuilder num = new StringBuilder(Integer.toString(inteira));
-        int potencia = num.length() - 1;
-        
-        num.insert(1, '.');
-        num.append(Integer.toString(decimal));
-        num.append(" * 10^");
-        num.append(Integer.toString(potencia));
-        num.append(unidade);
-        
-        return num.toString();
-    }
-    
+    // ACTIONS    
     public static String calcularPeriodo(int valor) {
         int horas = valor/3600;
         int min = (valor%3600)/60;
@@ -164,5 +95,18 @@ public class Planetas {
         periodo.append("S");
         
         return periodo.toString();
+    }
+    
+    public double velocidadeRotacao() {
+      double perimetroEmM = perimetro/1000;
+      double velocidade = perimetroEmM/periodoRotacao;
+      return Math.round(velocidade * 100.0)/100.0;
+    }
+    
+    public double velocidadeTranslacao() {
+      double distanciaSolEmM = distanciaSol/1000;
+      double perimetroCircunferencia = 2 * 3.14 * distanciaSolEmM;
+      double velocidade = perimetroCircunferencia/periodoTranslacao;
+      return Math.round(velocidade * 100.0)/100.0;
     }
 }
