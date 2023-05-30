@@ -7,7 +7,4 @@
    <top>
       <Button mnemonicParsing="false" onMouseClicked="#fecharPopUpJupiter" onTouchPressed="#fecharPopUpJupiter" text="voltar" BorderPane.alignment="CENTER" />
    </top>
-   <bottom>
-      <Button mnemonicParsing="false" onMouseClicked="#AbrirCuriosidadesJupiter" onTouchPressed="#AbrirCuriosidadesJupiter" text="Curiosidades" BorderPane.alignment="CENTER" />
-   </bottom>
 </BorderPane>
