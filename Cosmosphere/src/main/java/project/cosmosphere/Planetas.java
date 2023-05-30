@@ -60,6 +60,14 @@ public class Planetas {
         return perimetro;
     }
     
+    public String [] getCaracteristicas() {
+        return caracteristicas;
+    }
+    
+    public String getUrlImagem() {
+        return urlImagem;
+    }
+    
     // GETs com Formatação    
     public String getDistanciaSolFormatado() {
         return Double.toString(distanciaSol) + " KM";
