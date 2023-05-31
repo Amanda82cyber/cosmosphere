@@ -40,6 +40,7 @@
     -fx-font-weight: bold;
     -fx-padding: 5px 15px;
     -fx-font-size: 20px;
+    -fx-cursor: hand;
 }
 
 .border-pane .button:hover, .border-pane .button.active {

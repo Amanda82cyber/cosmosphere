@@ -12,7 +12,7 @@ public class Terra extends Planetas {
     periodoTranslacao = 31556880; // segundos
     temperatura = "14ºC";
     populacao = "8.028.091.456";
-    idade = "4,5 bilhões de anos";
+    idade = "4,5 bilhões";
     perimetro = 40075; // km
     curiosidades[0] = "A Terra é conhecida por “Planeta Azul”, já que cerca de 70% da superfície terrestre é formada por oceanos e mares.";
     curiosidades[1] = "A Terra é o único planeta que não foi batizado com nome em referência a algum deus romano. Em latim, “terra” significa “solo, região, país”.";
