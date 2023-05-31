@@ -71,7 +71,7 @@
     -fx-border-color: #6c8688;
 }
 
-.border-pane .characteristics {
+.border-pane .characteristics, .border-pane .curiosidades {
   -fx-font-size: 15px;
 }
 
