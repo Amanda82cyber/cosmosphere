@@ -3,6 +3,7 @@
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -21,13 +22,13 @@
                <VBox.margin>
                   <Insets bottom="20.0" top="20.0" />
                </VBox.margin></ImageView>
-            <Button mnemonicParsing="false" text="INFORMAÇÕES">
+            <Button fx:id="botaoInformacoes" mnemonicParsing="false" onAction="#setVisibleGridInformacoes" text="INFORMAÇÕES">
                <styleClass>
                   <String fx:value="button" />
                   <String fx:value="active" />
                </styleClass>
             </Button>
-            <Button mnemonicParsing="false" styleClass="button" text="CURIOSIDADES">
+            <Button fx:id="botaoCuriosidades" mnemonicParsing="false" onAction="#setVisibleGridCuriosidades" styleClass="button" text="CURIOSIDADES">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
@@ -36,7 +37,7 @@
       </VBox>
    </left>
    <center>
-      <GridPane BorderPane.alignment="CENTER">
+      <GridPane fx:id="gridInformacoes" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -161,4 +162,53 @@
          </children>
       </GridPane>
    </center>
+   <right>
+      <GridPane fx:id="gridCuriosidades" alignment="CENTER" prefHeight="478.0" prefWidth="502.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="curiosidade0" styleClass="curiosidades" textAlignment="JUSTIFY" textFill="#6c8688" wrapText="true" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="curiosidade1" layoutX="20.0" layoutY="40.0" styleClass="curiosidades" textAlignment="JUSTIFY" textFill="#6c8688" wrapText="true" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="curiosidade2" layoutX="20.0" layoutY="120.0" styleClass="curiosidades" textAlignment="JUSTIFY" textFill="#6c8688" wrapText="true" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="curiosidade3" layoutX="20.0" layoutY="200.0" styleClass="curiosidades" textAlignment="JUSTIFY" textFill="#6c8688" wrapText="true" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="curiosidade4" layoutX="20.0" layoutY="280.0" styleClass="curiosidades" textAlignment="JUSTIFY" textFill="#6c8688" wrapText="true" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="curiosidade5" layoutX="20.0" layoutY="359.0" styleClass="curiosidades" textAlignment="JUSTIFY" textFill="#6c8688" wrapText="true" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </GridPane.margin>
+            </Label>
+         </children>
+      </GridPane>
+   </right>
 </BorderPane>
