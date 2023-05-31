@@ -9,15 +9,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import project.cosmosphere.App;
 
 public class PopUpConfiguracoesController implements Initializable {
     
     @FXML
-    private BorderPane PopUpConfiguracoes;
+    private GridPane PopUpConfiguracoes;
     @FXML
-    private BorderPane PopUpConfigacao;
+    private GridPane PopUpConfigacao;
 
     @FXML
     public void fecharPopUpConfiguracoes() throws IOException {
@@ -40,7 +41,14 @@ public class PopUpConfiguracoesController implements Initializable {
         stage.setTitle("Cosmosphere - Ações");
         stage.show();
     }
-    
+    @FXML
+    //public void SetarConfiguracoes() throws IOException {
+        
+        
+        
+        
+        
+    //}
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     //todo
