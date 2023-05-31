@@ -26,7 +26,7 @@ import project.cosmosphere.Venus;
 
 public class TelaSimulacaoController implements Initializable {
   @FXML
-  private GridPane telaSimulacao;
+  private GridPane TelaSimulacao;
 
   // ACTIONS
   @FXML
@@ -35,7 +35,7 @@ public class TelaSimulacaoController implements Initializable {
     FXMLLoader fxml = new FXMLLoader(url);
     Parent raiz = fxml.load();
 
-    Stage stage = (Stage) telaSimulacao.getScene().getWindow();
+    Stage stage = (Stage) TelaSimulacao.getScene().getWindow();
     stage.setScene(new Scene(raiz));
     stage.setTitle("Cosmosphere - Tela Inicial");
     stage.show();
