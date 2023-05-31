@@ -1,7 +1,7 @@
 package project.cosmosphere;
 
 public class Venus extends Planetas{
-    
+    private String nome = "Vênus";
     private String diametro = "12.104 Km";
     private String area = "460.233.000 Km²";
     private String massa = "4,8675 × 10^24 kg";

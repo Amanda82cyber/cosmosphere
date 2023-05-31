@@ -1,7 +1,7 @@
 package project.cosmosphere;
 
 public class Mercurio extends Planetas {
-    
+    private String nome = "Mercúrio";
     private String diametro = "4.879,4 Km";
     private String area = "74.800.000 Km²";
     private String massa = "3,285 * 10^23 kg";

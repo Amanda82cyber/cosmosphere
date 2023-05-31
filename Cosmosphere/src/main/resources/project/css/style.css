@@ -70,3 +70,11 @@
     -fx-border-width: 0 5px 0 0;
     -fx-border-color: #6c8688;
 }
+
+.border-pane .characteristics {
+  -fx-font-size: 15px;
+}
+
+.border-pane .characteristics-value {
+  -fx-font-size: 25px;
+}

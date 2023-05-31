@@ -12,7 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class TelaCreditosController implements Initializable {
+public class TelaCreditosController implements Initializable {    
     @FXML
     private BorderPane telaCreditos;
     

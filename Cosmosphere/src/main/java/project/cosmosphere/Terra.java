@@ -1,7 +1,7 @@
 package project.cosmosphere;
 
 public class Terra extends Planetas {
-    
+    private String nome = "Terra";
     private String diametro = "12.756,2 Km";
     private String area = "510.072.000 Km²";
     private String massa = "5,9736 * 10^24 kg";

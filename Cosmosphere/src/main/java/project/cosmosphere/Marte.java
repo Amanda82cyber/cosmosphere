@@ -1,7 +1,7 @@
 package project.cosmosphere;
 
 public class Marte extends Planetas{
-    
+    private String nome = "Marte";
     private String diametro = "6.779  Km";
     private String area = "144.798.500 Km²";
     private String massa = "6,39 × 10^23 kg";

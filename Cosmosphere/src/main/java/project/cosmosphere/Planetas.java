@@ -1,6 +1,7 @@
 package project.cosmosphere;
 
 public class Planetas {
+    private String nome;
     private String diametro;
     private String area;
     private String massa;
@@ -16,6 +17,10 @@ public class Planetas {
     private String urlImagem;
     
     // GETs
+    public String getNome() {
+        return nome;
+    }
+    
     public String getDiametro() {
         return diametro;
     }

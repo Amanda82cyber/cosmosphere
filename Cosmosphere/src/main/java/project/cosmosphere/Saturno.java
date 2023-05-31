@@ -1,7 +1,7 @@
 package project.cosmosphere;
 
 public class Saturno extends Planetas{    
-    
+    private String nome = "Saturno";
     private String diametro = "116.460  Km";
     private String area = "42.612.133.285 Km²";
     private String massa = "5,683 × 10^26 kg";

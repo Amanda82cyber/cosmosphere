@@ -1,7 +1,7 @@
 package project.cosmosphere;
 
 public class Netuno extends Planetas{
-   
+    private String nome = "Netuno";
     private String diametro = "49.244  Km";
     private String area = "7.618.272.763 Km²";
     private String massa = "1,024 × 10^26 kg";

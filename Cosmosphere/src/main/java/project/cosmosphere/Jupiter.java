@@ -1,7 +1,7 @@
 package project.cosmosphere;
 
 public class Jupiter extends Planetas{
-   
+    private String nome = "Júpiter";
     private String diametro = "139.820  Km";
     private String area = "61.418.738.520 Km²";
     private String massa = "1,898 × 10^27 kg";

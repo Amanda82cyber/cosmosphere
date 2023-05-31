@@ -48,23 +48,23 @@
             <Image url="@../img/sol763.png" />
          </image>
       </ImageView>
-      <Sphere fx:id="mercurio" radius="2.66" GridPane.columnIndex="4" onMouseClicked="#PopUpAbrirMercurio" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
+      <Sphere fx:id="mercurio" radius="2.66" GridPane.columnIndex="4" onMouseClicked="#popUpPlaneta" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
          </Sphere>
-      <Sphere fx:id="venus" layoutX="261.0" layoutY="306.0" radius="6.65" GridPane.columnIndex="5" onMouseClicked="#PopUpAbrirVenus" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="BOTTOM">
+      <Sphere fx:id="venus" layoutX="261.0" layoutY="306.0" radius="6.65" GridPane.columnIndex="5" onMouseClicked="#popUpPlaneta" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="BOTTOM">
          </Sphere>
-      <Sphere fx:id="terra" radius="7.0" GridPane.columnIndex="6" GridPane.halignment="CENTER" onMouseClicked="#PopUpAbrirTerra" GridPane.rowIndex="8" GridPane.valignment="BOTTOM">
+      <Sphere fx:id="terra" radius="7.0" GridPane.columnIndex="6" GridPane.halignment="CENTER" onMouseClicked="#popUpPlaneta" GridPane.rowIndex="8" GridPane.valignment="BOTTOM">
          </Sphere>
-      <Sphere fx:id="marte" layoutX="390.0" layoutY="238.0" radius="3.71" GridPane.columnIndex="7" onMouseClicked="#PopUpAbrirMarte" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
+      <Sphere fx:id="marte" layoutX="390.0" layoutY="238.0" radius="3.71" GridPane.columnIndex="7" onMouseClicked="#popUpPlaneta" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
          </Sphere>
-      <Sphere fx:id="jupiter" layoutX="474.0" layoutY="213.0" onMouseClicked="#PopUpAbrirJupiter" radius="78.4" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
+      <Sphere fx:id="jupiter" layoutX="474.0" layoutY="213.0" onMouseClicked="#popUpPlaneta" radius="78.4" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
          </Sphere>
-      <Sphere fx:id="saturno" layoutX="520.0" layoutY="204.0" radius="63.7" GridPane.columnIndex="10" onMouseClicked="#PopUpAbrirSaturno" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
+      <Sphere fx:id="saturno" layoutX="520.0" layoutY="204.0" radius="63.7" GridPane.columnIndex="10" onMouseClicked="#popUpPlaneta" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
          </Sphere>
-      <Sphere fx:id="urano" layoutX="679.0" layoutY="181.0" radius="28.0" GridPane.columnIndex="11" onMouseClicked="#PopUpAbrirUrano" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+      <Sphere fx:id="urano" layoutX="679.0" layoutY="181.0" radius="28.0" GridPane.columnIndex="11" onMouseClicked="#popUpPlaneta" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
          </Sphere>
-      <Sphere fx:id="netuno" layoutX="758.0" layoutY="177.0" radius="27.3" GridPane.columnIndex="12" onMouseClicked="#PopUpAbrirNetuno" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+      <Sphere fx:id="netuno" layoutX="758.0" layoutY="177.0" radius="27.3" GridPane.columnIndex="12" onMouseClicked="#popUpPlaneta" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
          </Sphere>
-      <ImageView fitHeight="38.0" fitWidth="31.0" onMouseClicked="#popUpAbrirConfiguracao" pickOnBounds="true" preserveRatio="true" styleClass="icon-button" GridPane.columnIndex="14" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+      <ImageView fitHeight="38.0" fitWidth="31.0" onMouseClicked="#popUpConfiguracao" pickOnBounds="true" preserveRatio="true" styleClass="icon-button" GridPane.columnIndex="14" GridPane.halignment="CENTER" GridPane.valignment="TOP">
          <image>
             <Image url="@../img/icon-engrenagem.png" />
          </image>

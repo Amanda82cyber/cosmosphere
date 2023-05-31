@@ -1,7 +1,7 @@
 package project.cosmosphere;
 
 public class Urano extends Planetas{
-    
+    private String nome = "Urano";
     private String diametro = "50.724  Km";
     private String area = "8.083.079.690 Km²";
     private String massa = "8,681 × 10^25 kg";
