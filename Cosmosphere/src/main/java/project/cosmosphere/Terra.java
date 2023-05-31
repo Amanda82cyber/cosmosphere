@@ -1,7 +1,6 @@
 package project.cosmosphere;
 
 public class Terra extends Planetas {
-
   public Terra() {
     nome = "Terra";
     diametro = "12.756,2 Km";
