@@ -9,12 +9,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Sphere;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import project.cosmosphere.App;
 import project.cosmosphere.Jupiter;
+import project.cosmosphere.Marte;
 import project.cosmosphere.Mercurio;
 import project.cosmosphere.Netuno;
 import project.cosmosphere.Planetas;
@@ -41,39 +43,39 @@ public class TelaSimulacaoController implements Initializable {
   }
 
   @FXML
-  public void popUpPlaneta(ActionEvent event) throws IOException {
+  public void popUpPlaneta(MouseEvent event) throws IOException {
     URL url = App.class.getResource("PopUpPlaneta.fxml");
     FXMLLoader fxml = new FXMLLoader(url);
     Parent raiz = fxml.load();
     
-    Planetas objeto = new Planetas();
+    Planetas objeto = null;
     
     Sphere esfera = (Sphere) event.getSource();
       
     switch (esfera.getId()) {
       case "terra":
-        objeto = (Terra) objeto;
+        objeto = new Terra();
         break;
       case "mercurio":
-        objeto = (Mercurio) objeto;
+        objeto = new Mercurio();
         break;
       case "venus":
-        objeto = (Venus) objeto;
+        objeto = new Venus();
         break;
       case "marte":
-        objeto = (Mercurio) objeto;
+        objeto = new Marte();
         break;
       case "jupiter":
-        objeto = (Jupiter) objeto;
+        objeto = new Jupiter();
         break;
       case "saturno": 
-        objeto = (Saturno) objeto;
+        objeto = new Saturno();
         break;
       case "urano":
-        objeto = (Urano) objeto;
+        objeto = new Urano();
         break;
       case "netuno":
-        objeto = (Netuno) objeto;
+        objeto = new Netuno();
         break;
       default:
         break;
@@ -86,7 +88,7 @@ public class TelaSimulacaoController implements Initializable {
 
     Stage stage = new Stage();
     stage.initModality(Modality.WINDOW_MODAL);
-    stage.setTitle("PopUpPlaneta");
+    stage.setTitle("Cosmosphere - Planeta");
     stage.setScene(cena);
 
     stage.sizeToScene();

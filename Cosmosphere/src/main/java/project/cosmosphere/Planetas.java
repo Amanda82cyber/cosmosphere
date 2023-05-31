@@ -1,20 +1,20 @@
 package project.cosmosphere;
 
 public class Planetas {
-    private String nome;
-    private String diametro;
-    private String area;
-    private String massa;
-    private double distanciaSol; // km
-    private String sateliteNatural;
-    private int periodoRotacao; // segundos
-    private long periodoTranslacao; // segundos
-    private String temperatura;
-    private String populacao;
-    private String idade;
-    private double perimetro; // km
-    private String [] caracteristicas = new String[6];
-    private String urlImagem;
+    protected String nome;
+    protected String diametro;
+    protected String area;
+    protected String massa;
+    protected double distanciaSol; // km
+    protected String sateliteNatural;
+    protected int periodoRotacao; // segundos
+    protected long periodoTranslacao; // segundos
+    protected String temperatura;
+    protected String populacao;
+    protected String idade;
+    protected double perimetro; // km
+    protected String [] curiosidades = new String[6];
+    protected String urlImagem;
     
     // GETs
     public String getNome() {
@@ -65,8 +65,8 @@ public class Planetas {
         return perimetro;
     }
     
-    public String [] getCaracteristicas() {
-        return caracteristicas;
+    public String [] getCuriosidades() {
+        return curiosidades;
     }
     
     public String getUrlImagem() {

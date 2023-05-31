@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import project.cosmosphere.Planetas;
+import project.cosmosphere.App;
 
 public class PopUpPlanetaController implements Initializable {
   @FXML
@@ -48,10 +49,11 @@ public class PopUpPlanetaController implements Initializable {
   
   public void preencherTela(Planetas planeta) {
     nome.setText(planeta.getNome());
-    imagem.setImage(new Image(getClass().getResourceAsStream("terra.png")));
+    imagem.setImage(new Image(App.class.getResourceAsStream("terra.png")));
     diametro.setText(planeta.getDiametro());
     area.setText(planeta.getArea());
     massa.setText(planeta.getMassa());
+    distanciaSol.setText(planeta.getDistanciaSolFormatado());
     sateliteNatural.setText(planeta.getSateliteNatural());
     periodoRotacao.setText(planeta.getPeriodoRotacaoFormatado());
     periodoTranslacao.setText(planeta.getPeriodoTranslacaoFormatado());
