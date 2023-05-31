@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane fx:id="PopUpConfiguracoes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="border-pane" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controller.PopUpConfiguracoesController">
+<GridPane fx:id="PopUpConfiguracoes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="border-pane" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controller.PopUpConfiguracoesController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
@@ -23,40 +24,23 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Text fill="#6c8688" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="CONFIGURAÇÕES" textAlignment="CENTER" wrappingWidth="320.9856643676758" GridPane.columnIndex="1" GridPane.columnSpan="3" />
-      <CheckBox graphicTextGap="8.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="155.0" text="TERRA" textFill="#6c8688" GridPane.rowIndex="1">
-         <font>
-            <Font size="11.0" />
-         </font></CheckBox>
-      <CheckBox mnemonicParsing="false" text="MARTE" textFill="#6c8688" GridPane.columnIndex="2" GridPane.rowIndex="1">
-         <font>
-            <Font size="11.0" />
-         </font></CheckBox>
-      <CheckBox mnemonicParsing="false" prefHeight="38.0" prefWidth="184.0" text="MERCURIO" textFill="#6c8688" GridPane.columnIndex="4" GridPane.rowIndex="1">
-         <font>
-            <Font size="11.0" />
-         </font></CheckBox>
-      <CheckBox mnemonicParsing="false" text="SATURNO" textFill="#6c8688" GridPane.columnIndex="2" GridPane.rowIndex="2">
-         <font>
-            <Font size="11.0" />
-         </font></CheckBox>
-      <CheckBox mnemonicParsing="false" text="VENUS" textFill="#6c8688" GridPane.rowIndex="2">
-         <font>
-            <Font size="11.0" />
-         </font></CheckBox>
-      <CheckBox mnemonicParsing="false" text="NETUNO" textFill="#6c8688" GridPane.columnIndex="4" GridPane.rowIndex="2">
-         <font>
-            <Font size="10.0" />
-         </font></CheckBox>
-      <CheckBox mnemonicParsing="false" text="URANO" textFill="#6c8688" GridPane.rowIndex="3">
-         <font>
-            <Font size="11.0" />
-         </font></CheckBox>
-      <CheckBox mnemonicParsing="false" text="JUPITER" textFill="#6c8688" GridPane.columnIndex="2" GridPane.rowIndex="3">
-         <font>
-            <Font size="11.0" />
-         </font></CheckBox>
-      <Button mnemonicParsing="false" onMouseClicked="#fecharPopUpConfiguracoes" onTouchPressed="#fecharPopUpConfiguracoes" prefHeight="44.0" prefWidth="111.0" text="BACK" GridPane.columnIndex="4" />
-      <Button mnemonicParsing="false" onMouseClicked="#ABrirPopUpConfigAcao" onTouchPressed="#ABrirPopUpConfigAcao" prefHeight="47.0" prefWidth="106.0" text="NEXT" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+      <Text fill="#6c8688" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="CONFIGURAÇÕES" textAlignment="CENTER" wrappingWidth="320.9856643676758" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+      <CheckBox graphicTextGap="8.0" mnemonicParsing="false" styleClass="check-box" text="TERRA" textFill="#6c8688" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <CheckBox mnemonicParsing="false" styleClass="check-box" text="MARTE" textFill="#6c8688" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <CheckBox mnemonicParsing="false" styleClass="check-box" text="MERCÚRIO" textFill="#6c8688" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <CheckBox mnemonicParsing="false" styleClass="check-box" text="SATURNO" textFill="#6c8688" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <CheckBox mnemonicParsing="false" styleClass="check-box" text="VÊNUS" textFill="#6c8688" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <CheckBox mnemonicParsing="false" styleClass="check-box" text="NETUNO" textFill="#6c8688" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <CheckBox mnemonicParsing="false" styleClass="check-box" text="URANO" textFill="#6c8688" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <CheckBox mnemonicParsing="false" styleClass="check-box" text="JÚPITER" textFill="#6c8688" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <Button mnemonicParsing="false" onMouseClicked="#ABrirPopUpConfigAcao" onTouchPressed="#ABrirPopUpConfigAcao" prefHeight="47.0" prefWidth="122.0" styleClass="button" text="PRÓXIMO" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+      <ImageView fitHeight="38.0" fitWidth="31.0" onMouseClicked="#fecharPopUpConfiguracoes" onTouchPressed="#fecharPopUpConfiguracoes" pickOnBounds="true" preserveRatio="true" styleClass="icon-button" GridPane.valignment="CENTER">
+         <image>
+            <Image url="@../img/icon-voltar.png" />
+         </image>
+         <GridPane.margin>
+            <Insets left="20.0" />
+         </GridPane.margin>
+      </ImageView>
    </children>
 </GridPane>

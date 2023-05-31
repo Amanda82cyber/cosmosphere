@@ -39,7 +39,7 @@
     -fx-font-family: "Revelstoke";
     -fx-font-weight: bold;
     -fx-padding: 5px 15px;
-    -fx-font-size: 20px;
+    -fx-font-size: 16px;
     -fx-cursor: hand;
 }
 
@@ -72,10 +72,14 @@
     -fx-border-color: #6c8688;
 }
 
-.border-pane .characteristics, .border-pane .curiosidades {
+.border-pane .characteristics, .border-pane .curiosidades, .border-pane .check-box {
   -fx-font-size: 15px;
 }
 
 .border-pane .characteristics-value {
   -fx-font-size: 25px;
+}
+
+.border-pane .check-box > .box, .border-pane .check-box > .mark {
+  -fx-padding: 0px;
 }
