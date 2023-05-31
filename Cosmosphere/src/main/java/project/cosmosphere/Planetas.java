@@ -14,7 +14,7 @@ public class Planetas {
     protected String idade;
     protected double perimetro; // km
     protected String [] curiosidades = new String[6];
-    protected String urlImagem;
+    protected String Imagem;
     
     // GETs
     public String getNome() {
@@ -69,8 +69,8 @@ public class Planetas {
         return curiosidades;
     }
     
-    public String getUrlImagem() {
-        return urlImagem;
+    public String getImagem() {
+        return Imagem;
     }
     
     // GETs com Formatação    
