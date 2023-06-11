@@ -21,6 +21,7 @@ public class Jupiter extends Planetas {
     curiosidades[3] = "Seu campo magnético é responsável pela emissão de intensas auroras nas regiões polares.";
     curiosidades[4] = "A rotação de Júpiter é muito rápida. Um dia em Júpiter dura apenas cerca de 10 horas terrestres.";
     imagem = "jupiter.png";
+    imagemMap = "jupiter-map.jpg";
   }
 
 }

@@ -20,6 +20,7 @@ public class Saturno extends Planetas {
     curiosidades[2] = "A densidade de Saturno é tão baixa que, se houvesse um oceano grande o suficiente, o planeta flutuaria nele. Sua densidade média é menor que a da água.";
     curiosidades[3] = "A missão Cassini-Huygens, uma colaboração entre a NASA, a ESA e a ASI, estudou Saturno e suas luas de perto. A missão lançou a sonda Huygens, que aterrissou com sucesso na maior lua de Saturno, Titã.";
     imagem = "saturno.png";
+    imagemMap = "saturno-map.jpg";
   }
 
 }

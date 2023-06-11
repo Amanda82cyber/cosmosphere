@@ -22,6 +22,7 @@ public class Mercurio extends Planetas {
     curiosidades[4] = " As áreas permanentemente sombreadas pelo sol nos polos do planeta abrigam gelo de água, mesmo tão perto da estrela.";
     curiosidades[5] = "Não possui luas ou anéis ao seu redor, tornando-se o único planeta do Sistema Solar, além de Vênus, a não ter luas conhecidas.";
     imagem = "mercurio.png";
+    imagemMap = "mercurio-map.jpg";
   }
 
 }

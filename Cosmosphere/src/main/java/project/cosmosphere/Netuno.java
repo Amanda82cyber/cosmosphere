@@ -19,6 +19,7 @@ public class Netuno extends Planetas {
     curiosidades[1] = "O clima em Netuno é extremamente violento, com ventos poderosos que podem atingir velocidades superiores a 2.000 quilômetros por hora. Esses ventos são alguns dos mais rápidos do Sistema Solar.";
     curiosidades[2] = "Netuno tem um campo magnético forte e inclinado. Seu campo magnético é cerca de 27 vezes mais poderoso que o campo magnético da Terra.";
     imagem = "netuno.png";
+    imagemMap = "netuno-map.jpg";
   }
 
 }

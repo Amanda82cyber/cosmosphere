@@ -19,6 +19,7 @@ public class Venus extends Planetas {
     curiosidades[1] = "A atmosfera de Vênus é composta principalmente de dióxido de carbono, com nuvens de ácido sulfúrico. Essas nuvens refletem a luz solar, o que dá a Vênus sua aparência brilhante no céu noturno.";
     curiosidades[2] = "Vênus é o segundo objeto mais brilhante no céu noturno, depois da Lua. Seu brilho é resultado de sua atmosfera refletindo a luz do Sol.";
     imagem = "venus.png";
+    imagemMap = "venus-map.jpg";
   }
 
 }

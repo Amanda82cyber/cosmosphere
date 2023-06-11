@@ -15,6 +15,7 @@ public class Planetas {
     protected double perimetro; // km
     protected String [] curiosidades = new String[6];
     protected String imagem;
+    protected String imagemMap;
     
     // GETs
     public String getNome() {
@@ -73,6 +74,10 @@ public class Planetas {
         return imagem;
     }
     
+    public String getImagemMap() {
+        return imagemMap;
+    }
+    
     // GETs com Formatação    
     public String getDistanciaSolFormatado() {
         return Double.toString(distanciaSol) + " KM";
@@ -105,13 +110,13 @@ public class Planetas {
     public double velocidadeRotacao() {
       double perimetroEmM = perimetro/1000;
       double velocidade = perimetroEmM/periodoRotacao;
-      return Math.round(velocidade * 100.0)/100.0;
+      return Math.ceil(velocidade * 100.0);
     }
     
     public double velocidadeTranslacao() {
       double distanciaSolEmM = distanciaSol/1000;
       double perimetroCircunferencia = 2 * 3.14 * distanciaSolEmM;
       double velocidade = perimetroCircunferencia/periodoTranslacao;
-      return Math.round(velocidade * 100.0)/100.0;
+      return Math.ceil(velocidade * 100.0);
     }
 }

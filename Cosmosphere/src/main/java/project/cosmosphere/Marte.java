@@ -21,6 +21,7 @@ public class Marte extends Planetas {
     curiosidades[3] = "A presença de água congelada em sua superfície e a descoberta de antigos leitos de rios e lagos sugerem que Marte pode ter tido condições favoráveis para a vida no passado.";
     curiosidades[4] = "Marte é conhecido como o \"Planeta Vermelho\" devido à cor avermelhada de sua superfície, causada pela presença de óxido de ferro, também conhecido como ferrugem.";
     imagem = "marte.png";
+    imagemMap = "marte-map.jpg";
   }
 
 }

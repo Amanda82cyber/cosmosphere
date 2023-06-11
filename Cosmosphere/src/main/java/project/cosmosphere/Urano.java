@@ -20,6 +20,7 @@ public class Urano extends Planetas {
     curiosidades[2] = "Sua inclinação axial faz com que o planeta gire de lado, com seus polos apontando quase diretamente para o Sol em certos períodos.";
     curiosidades[3] = "Urano tem um sistema de anéis, embora sejam menos proeminentes e visíveis do que os anéis de Saturno. Esses anéis são compostos principalmente de partículas de gelo.";
     imagem = "urano.png";
+    imagemMap = "urano-map.jpg";
   }
 
 }

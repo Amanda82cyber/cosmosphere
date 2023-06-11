@@ -3,6 +3,7 @@ package project.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,6 +14,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
+import javafx.scene.transform.Rotate;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import project.cosmosphere.App;
@@ -73,38 +75,9 @@ public class TelaSimulacaoController implements Initializable {
     FXMLLoader fxml = new FXMLLoader(url);
     Parent raiz = fxml.load();
     
-    Planetas objeto = null;
-    
     Sphere esfera = (Sphere) event.getSource();
-      
-    switch (esfera.getId()) {
-      case "terra":
-        objeto = new Terra();
-        break;
-      case "mercurio":
-        objeto = new Mercurio();
-        break;
-      case "venus":
-        objeto = new Venus();
-        break;
-      case "marte":
-        objeto = new Marte();
-        break;
-      case "jupiter":
-        objeto = new Jupiter();
-        break;
-      case "saturno": 
-        objeto = new Saturno();
-        break;
-      case "urano":
-        objeto = new Urano();
-        break;
-      case "netuno":
-        objeto = new Netuno();
-        break;
-      default:
-        break;
-    }
+    
+    Planetas objeto = pegarObjetoCorrespondente(esfera.getId());
 
     PopUpPlanetaController planetaController = fxml.getController();
     planetaController.preencherTela(objeto);
@@ -162,48 +135,58 @@ public class TelaSimulacaoController implements Initializable {
 
   @Override
   public void initialize(URL url, ResourceBundle rb) {
-    // Mercurio
-    PhongMaterial phongMercurio = new PhongMaterial();
-    phongMercurio.setDiffuseMap(new Image(App.class.getResourceAsStream("mercurio.png")));
-    mercurio.setMaterial(phongMercurio);
+    colocarImagemPlaneta(mercurio);
+    colocarImagemPlaneta(venus);
+    colocarImagemPlaneta(terra);
+    colocarImagemPlaneta(marte);
+    colocarImagemPlaneta(jupiter);
+    colocarImagemPlaneta(saturno);
+    colocarImagemPlaneta(urano);
+    colocarImagemPlaneta(netuno);
+  }
+  
+  private static Planetas pegarObjetoCorrespondente(String identificador){
+    switch (identificador) {
+      case "terra":
+        return new Terra();
+      case "mercurio":
+        return new Mercurio();
+      case "venus":
+        return new Venus();
+      case "marte":
+        return new Marte();
+      case "jupiter":
+        return new Jupiter();
+      case "saturno": 
+        return new Saturno();
+      case "urano":
+        return new Urano();
+      case "netuno":
+        return new Netuno();
+      default:
+        return null;
+    }
+  }
+  
+  private static void colocarImagemPlaneta(Sphere esfera) {
+    Planetas objeto = pegarObjetoCorrespondente(esfera.getId());
     
-    // Venus
-    PhongMaterial phongVenus = new PhongMaterial();
-    phongVenus.setDiffuseMap(new Image(App.class.getResourceAsStream("venus.png")));
-    venus.setMaterial(phongVenus);
+    PhongMaterial phong = new PhongMaterial();
+    phong.setDiffuseMap(new Image(App.class.getResourceAsStream(objeto.getImagemMap())));
+    esfera.setMaterial(phong);
     
-    // Terra
-    PhongMaterial phongTerra = new PhongMaterial();
-    phongTerra.setDiffuseMap(new Image(App.class.getResourceAsStream("terra.png")));
-    terra.setMaterial(phongTerra);
+    esfera.setRotationAxis(Rotate.Y_AXIS);
+    rodarPlaneta(objeto, esfera);
+  }
+  
+  private static void rodarPlaneta(Planetas planeta, Sphere esfera) {    
+    AnimationTimer timer = new AnimationTimer() {
+      @Override
+      public void handle(long now) {
+        esfera.rotateProperty().set(esfera.getRotate() + planeta.velocidadeRotacao());
+      }
+    };
     
-    // Marte
-    PhongMaterial phongMarte = new PhongMaterial();
-    phongMarte.setDiffuseMap(new Image(App.class.getResourceAsStream("marte.png")));
-    marte.setMaterial(phongMarte);
-    
-    // Jupiter
-    PhongMaterial phongJupiter = new PhongMaterial();
-    phongJupiter.setDiffuseMap(new Image(App.class.getResourceAsStream("jupiter.png")));
-    jupiter.setMaterial(phongJupiter);
-    
-    // Saturno
-    /*
-    PhongMaterial phongSaturno = new PhongMaterial();
-    phongSaturno.setDiffuseMap(new Image(App.class.getResourceAsStream("saturno.png")));
-    saturno.setMaterial(phongSaturno);
-    */
-    
-    // Urano
-    /*
-    PhongMaterial phongUrano = new PhongMaterial();
-    phongUrano.setDiffuseMap(new Image(App.class.getResourceAsStream("urano.png")));
-    urano.setMaterial(phongUrano);
-    */
-    
-    // Netuno
-    PhongMaterial phongNetuno = new PhongMaterial();
-    phongNetuno.setDiffuseMap(new Image(App.class.getResourceAsStream("netuno.png")));
-    netuno.setMaterial(phongNetuno);
+    timer.start();
   }
 }

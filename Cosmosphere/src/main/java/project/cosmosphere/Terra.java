@@ -21,5 +21,6 @@ public class Terra extends Planetas {
     curiosidades[4] = "A Terra é o planeta com maior densidade do Sistema Solar, tendo a densidade 5,51 g/cm³.";
     curiosidades[5] = "A distância entre a Lua e a Terra é de cerca de 384.400 km, o que equivale à mais de 30 vezes o diâmetro da Terra.";
     imagem = "terra.png";
+    imagemMap = "terra-map.jpg";
   }
 }
