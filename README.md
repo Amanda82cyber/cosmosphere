@@ -1,2 +1,3 @@
 # CosmoSphere
-Simulador do sistema solar feito em Java
+
+Simulador do Sistema Solar Feito em Java
