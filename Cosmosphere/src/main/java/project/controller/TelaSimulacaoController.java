@@ -1,5 +1,7 @@
 package project.controller;
-
+import javafx.fxml.FXML;
+import javafx.scene.layout.Pane;
+import javafx.scene.transform.Scale;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -11,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
@@ -29,6 +32,8 @@ import project.cosmosphere.Urano;
 import project.cosmosphere.Venus;
 
 public class TelaSimulacaoController implements Initializable {
+  @FXML
+  private Scale scaleTransform;
   @FXML
   private GridPane TelaSimulacao;
   
@@ -143,6 +148,13 @@ public class TelaSimulacaoController implements Initializable {
     colocarImagemPlaneta(saturno);
     colocarImagemPlaneta(urano);
     colocarImagemPlaneta(netuno);
+        scaleTransform = new Scale(1, 1);
+        TelaSimulacao.getTransforms().add(scaleTransform);
+        
+        TelaSimulacao.setOnScroll(this::ScrollZoom);
+  
+  
+  
   }
   
   private static Planetas pegarObjetoCorrespondente(String identificador){
@@ -189,4 +201,22 @@ public class TelaSimulacaoController implements Initializable {
     
     timer.start();
   }
-}
+  @FXML  
+  public void ScrollZoom(ScrollEvent event){
+      
+        double zoomFactor = 1.1;
+        double deltaY = event.getDeltaY();
+
+        if (deltaY < 0) {
+            zoomFactor = 1 / zoomFactor;
+        }
+
+        scaleTransform.setX(scaleTransform.getX() * zoomFactor);
+        scaleTransform.setY(scaleTransform.getY() * zoomFactor);
+
+        event.consume();
+    }
+  
+  
+  
+  }
