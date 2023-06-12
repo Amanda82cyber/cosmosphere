@@ -4,19 +4,24 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.AnimationTimer;
+import javafx.animation.PathTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Sphere;
 import javafx.scene.transform.Rotate;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import project.cosmosphere.App;
 import project.cosmosphere.Jupiter;
 import project.cosmosphere.Marte;
@@ -55,6 +60,9 @@ public class TelaSimulacaoController implements Initializable {
   
   @FXML
   private Sphere terra;
+  
+  @FXML
+  private ImageView sol;
 
   // ACTIONS
   @FXML
@@ -135,14 +143,17 @@ public class TelaSimulacaoController implements Initializable {
 
   @Override
   public void initialize(URL url, ResourceBundle rb) {
-    colocarImagemPlaneta(mercurio);
-    colocarImagemPlaneta(venus);
-    colocarImagemPlaneta(terra);
-    colocarImagemPlaneta(marte);
-    colocarImagemPlaneta(jupiter);
-    colocarImagemPlaneta(saturno);
-    colocarImagemPlaneta(urano);
-    colocarImagemPlaneta(netuno);
+    double solX = sol.getFitWidth()/2;
+    double solY = (sol.getFitHeight()/2) + 600;
+    
+    colocarImagemPlaneta(mercurio, solX, solY);
+    colocarImagemPlaneta(venus, solX, solY);
+    colocarImagemPlaneta(terra, solX, solY);
+    colocarImagemPlaneta(marte, solX, solY);
+    colocarImagemPlaneta(jupiter, solX, solY);
+    colocarImagemPlaneta(saturno, solX, solY);
+    colocarImagemPlaneta(urano, solX, solY);
+    colocarImagemPlaneta(netuno, solX, solY);
   }
   
   private static Planetas pegarObjetoCorrespondente(String identificador){
@@ -168,7 +179,7 @@ public class TelaSimulacaoController implements Initializable {
     }
   }
   
-  private static void colocarImagemPlaneta(Sphere esfera) {
+  private static void colocarImagemPlaneta(Sphere esfera, double solX, double solY) {
     Planetas objeto = pegarObjetoCorrespondente(esfera.getId());
     
     PhongMaterial phong = new PhongMaterial();
@@ -177,6 +188,7 @@ public class TelaSimulacaoController implements Initializable {
     
     esfera.setRotationAxis(Rotate.Y_AXIS);
     rodarPlaneta(objeto, esfera);
+    transladarPlaneta(objeto, esfera, solX, solY);
   }
   
   private static void rodarPlaneta(Planetas planeta, Sphere esfera) {    
@@ -188,5 +200,25 @@ public class TelaSimulacaoController implements Initializable {
     };
     
     timer.start();
+  }
+  
+  private static void transladarPlaneta(Planetas planeta, Sphere esfera, double solX, double solY) {
+    double x = esfera.getLayoutX();
+    double y = esfera.getLayoutY();
+    
+    double distanciaSolEsfera = Math.ceil(Math.sqrt(Math.pow((x-solX), 2) + Math.pow((y-solY), 2)));
+    System.out.println("distanciaSolEsfera: "+ distanciaSolEsfera);
+    
+    Circle circle = new Circle(distanciaSolEsfera);
+    circle.setLayoutX(solX - circle.getRadius());
+    circle.setLayoutY(solY - circle.getRadius());
+    System.out.println("X: " + circle.getLayoutX() + " Y: " + circle.getLayoutY());
+    
+    PathTransition transition = new PathTransition();
+    transition.setNode(esfera);
+    transition.setPath(circle);
+    transition.setDuration(Duration.seconds(planeta.periodoTranslacaoPorMes()));
+    transition.setCycleCount(PathTransition.INDEFINITE);
+    transition.play();
   }
 }

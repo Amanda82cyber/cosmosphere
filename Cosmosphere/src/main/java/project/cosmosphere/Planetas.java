@@ -110,13 +110,18 @@ public class Planetas {
     public double velocidadeRotacao() {
       double perimetroEmM = perimetro/1000;
       double velocidade = perimetroEmM/periodoRotacao;
-      return Math.ceil(velocidade * 100.0);
+      return Math.ceil(velocidade);
     }
     
     public double velocidadeTranslacao() {
       double distanciaSolEmM = distanciaSol/1000;
       double perimetroCircunferencia = 2 * 3.14 * distanciaSolEmM;
       double velocidade = perimetroCircunferencia/periodoTranslacao;
-      return Math.ceil(velocidade * 100.0);
+      return Math.ceil(velocidade);
+    }
+    
+    public double periodoTranslacaoPorMes() {
+      double porMes = periodoTranslacao/2592000;
+      return Math.ceil(porMes);
     }
 }
