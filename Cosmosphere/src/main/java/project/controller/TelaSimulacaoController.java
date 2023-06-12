@@ -1,5 +1,8 @@
 package project.controller;
 
+import javafx.fxml.FXML;
+import javafx.scene.layout.Pane;
+import javafx.scene.transform.Scale;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -13,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
@@ -34,33 +38,36 @@ import project.cosmosphere.Urano;
 import project.cosmosphere.Venus;
 
 public class TelaSimulacaoController implements Initializable {
+
+  @FXML
+  private Scale scaleTransform;
   @FXML
   private GridPane TelaSimulacao;
-  
+
   @FXML
   private Sphere mercurio;
-  
+
   @FXML
   private Sphere venus;
-  
+
   @FXML
   private Sphere marte;
-  
+
   @FXML
   private Sphere jupiter;
-  
+
   @FXML
   private Sphere saturno;
-  
+
   @FXML
   private Sphere urano;
-  
+
   @FXML
   private Sphere netuno;
-  
+
   @FXML
   private Sphere terra;
-  
+
   @FXML
   private ImageView sol;
 
@@ -82,9 +89,9 @@ public class TelaSimulacaoController implements Initializable {
     URL url = App.class.getResource("PopUpPlaneta.fxml");
     FXMLLoader fxml = new FXMLLoader(url);
     Parent raiz = fxml.load();
-    
+
     Sphere esfera = (Sphere) event.getSource();
-    
+
     Planetas objeto = pegarObjetoCorrespondente(esfera.getId());
 
     PopUpPlanetaController planetaController = fxml.getController();
@@ -143,9 +150,9 @@ public class TelaSimulacaoController implements Initializable {
 
   @Override
   public void initialize(URL url, ResourceBundle rb) {
-    double solX = sol.getFitWidth()/2;
-    double solY = (sol.getFitHeight()/2) + 600;
-    
+    double solX = sol.getFitWidth() / 2;
+    double solY = (sol.getFitHeight() / 2) + 600;
+
     colocarImagemPlaneta(mercurio, solX, solY);
     colocarImagemPlaneta(venus, solX, solY);
     colocarImagemPlaneta(terra, solX, solY);
@@ -154,9 +161,14 @@ public class TelaSimulacaoController implements Initializable {
     colocarImagemPlaneta(saturno, solX, solY);
     colocarImagemPlaneta(urano, solX, solY);
     colocarImagemPlaneta(netuno, solX, solY);
+
+    scaleTransform = new Scale(1, 1);
+    TelaSimulacao.getTransforms().add(scaleTransform);
+
+    TelaSimulacao.setOnScroll(this::ScrollZoom);
   }
-  
-  private static Planetas pegarObjetoCorrespondente(String identificador){
+
+  private static Planetas pegarObjetoCorrespondente(String identificador) {
     switch (identificador) {
       case "terra":
         return new Terra();
@@ -168,7 +180,7 @@ public class TelaSimulacaoController implements Initializable {
         return new Marte();
       case "jupiter":
         return new Jupiter();
-      case "saturno": 
+      case "saturno":
         return new Saturno();
       case "urano":
         return new Urano();
@@ -178,47 +190,63 @@ public class TelaSimulacaoController implements Initializable {
         return null;
     }
   }
-  
+
   private static void colocarImagemPlaneta(Sphere esfera, double solX, double solY) {
     Planetas objeto = pegarObjetoCorrespondente(esfera.getId());
-    
+
     PhongMaterial phong = new PhongMaterial();
     phong.setDiffuseMap(new Image(App.class.getResourceAsStream(objeto.getImagemMap())));
     esfera.setMaterial(phong);
-    
+
     esfera.setRotationAxis(Rotate.Y_AXIS);
     rodarPlaneta(objeto, esfera);
     transladarPlaneta(objeto, esfera, solX, solY);
   }
-  
-  private static void rodarPlaneta(Planetas planeta, Sphere esfera) {    
+
+  private static void rodarPlaneta(Planetas planeta, Sphere esfera) {
     AnimationTimer timer = new AnimationTimer() {
       @Override
       public void handle(long now) {
         esfera.rotateProperty().set(esfera.getRotate() + planeta.velocidadeRotacao());
       }
     };
-    
+
     timer.start();
   }
-  
+
   private static void transladarPlaneta(Planetas planeta, Sphere esfera, double solX, double solY) {
     double x = esfera.getLayoutX();
     double y = esfera.getLayoutY();
-    
-    double distanciaSolEsfera = Math.ceil(Math.sqrt(Math.pow((x-solX), 2) + Math.pow((y-solY), 2)));
-    System.out.println("distanciaSolEsfera: "+ distanciaSolEsfera);
-    
+
+    double distanciaSolEsfera = Math.ceil(Math.sqrt(Math.pow((x - solX), 2) + Math.pow((y - solY), 2)));
+    System.out.println("distanciaSolEsfera: " + distanciaSolEsfera);
+
     Circle circle = new Circle(distanciaSolEsfera);
     circle.setLayoutX(solX - circle.getRadius());
     circle.setLayoutY(solY - circle.getRadius());
     System.out.println("X: " + circle.getLayoutX() + " Y: " + circle.getLayoutY());
-    
+
     PathTransition transition = new PathTransition();
     transition.setNode(esfera);
     transition.setPath(circle);
     transition.setDuration(Duration.seconds(planeta.periodoTranslacaoPorMes()));
     transition.setCycleCount(PathTransition.INDEFINITE);
     transition.play();
+  }
+
+  @FXML
+  public void ScrollZoom(ScrollEvent event) {
+
+    double zoomFactor = 1.1;
+    double deltaY = event.getDeltaY();
+
+    if (deltaY < 0) {
+      zoomFactor = 1 / zoomFactor;
+    }
+
+    scaleTransform.setX(scaleTransform.getX() * zoomFactor);
+    scaleTransform.setY(scaleTransform.getY() * zoomFactor);
+
+    event.consume();
   }
 }
